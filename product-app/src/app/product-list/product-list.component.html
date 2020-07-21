@@ -1,1 +1,60 @@
-<p>product-list works!</p>
+<div class="card">
+  <div class="card-header">
+    List of Product Page
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filter by:</div>
+      <div class="col-md-4">
+        <select>
+          <option>Choosing</option>
+          <option>TODO</option>
+          <option>TODO</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        Filtered by ...
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <button class="btn btn-primary">
+                Product Image
+              </button>
+            </th>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Available</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="productList.length > 0">
+          <tr *ngFor="let product of productList">
+            <th>
+              {{ product.imageUrl }}
+            </th>
+            <th>{{ product.code }}</th>
+            <th>{{ product.name }}</th>
+            <th>{{ product.price.toFixed(2) }}</th>
+            <th *ngIf="product.available">Yes</th>
+            <th *ngIf="product.available == false">No</th>
+            <th>{{ product.rating }}</th>
+          </tr>
+        </tbody>
+        <tbody *ngIf="productList.length == 0">
+          <tr>
+            <th>
+              No Products Available
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

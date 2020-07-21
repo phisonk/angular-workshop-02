@@ -4,12 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
-  { path:'login', component: LoginComponent},
-  { path:'list', component: ProductListComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'list', component: ProductListComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
