@@ -17,7 +17,7 @@
         <thead>
           <tr>
             <th>
-              <button class="btn btn-primary">
+              <button type="button" class="btn btn-primary">
                 Product Image
               </button>
             </th>
@@ -29,7 +29,11 @@
           </tr>
         </thead>
         <tbody *ngIf="productList.length > 0">
-          <tr *ngFor="let product of productList | product: filterData">
+          <tr
+            *ngFor="let product of productList | product: filterData"
+            (click)="open(product)"
+            [routerLink]="['/product', product.code]"
+          >
             <th>
               {{ product.imageUrl }}
             </th>
@@ -38,7 +42,12 @@
             <th>{{ product.price.toFixed(2) }}</th>
             <th *ngIf="product.available">Yes</th>
             <th *ngIf="product.available == false">No</th>
-            <th>{{ product.rating }}</th>
+            <th>
+              <app-rating
+                [rating]="product.rating"
+                (ratingClicked)="onRatingClicked($event)"
+              ></app-rating>
+            </th>
           </tr>
         </tbody>
         <tbody *ngIf="productList.length == 0">
@@ -52,3 +61,4 @@
     </div>
   </div>
 </div>
+<app-product-detail [products]="productList"></app-product-detail>
