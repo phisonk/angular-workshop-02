@@ -4,10 +4,4 @@ services:
     build: .
     image: phisonk/productapp:1.0.0
     ports:
-      - "9999:9999"
-  mongo:
-    image: mongo:4.2.8
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=secret
-      - MONGO_INITDB_DATABASE=mydb
+      - "9999:80"
