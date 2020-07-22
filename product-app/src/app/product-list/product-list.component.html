@@ -34,7 +34,7 @@
             (click)="open(product)"
             [routerLink]="['/product', product.code]"
           >
-            <th>
+            <th style="max-width: 150px;">
               {{ product.imageUrl }}
             </th>
             <th>{{ product.code }}</th>
@@ -61,4 +61,3 @@
     </div>
   </div>
 </div>
-<app-product-detail [products]="productList"></app-product-detail>

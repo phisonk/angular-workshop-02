@@ -8,17 +8,19 @@
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-4">Code:</div>
-          <div class="col-md-8">{{ product.code | productName: " " }}</div>
+          <div class="col-md-8">{{ product.code }}</div>
         </div>
 
         <div class="row">
           <div class="col-md-4">Name:</div>
-          <div class="col-md-8">{{ product.name }}</div>
+          <div class="col-md-8">
+            {{ product.name | uppercase | productName: " " }}
+          </div>
         </div>
 
         <div class="row">
           <div class="col-md-4">Price:</div>
-          <div class="col-md-8">{{ product.price }}</div>
+          <div class="col-md-8">{{ product.price.toFixed(2) }}</div>
         </div>
 
         <div class="row">
